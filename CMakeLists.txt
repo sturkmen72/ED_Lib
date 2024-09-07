@@ -29,3 +29,6 @@ target_link_libraries(test_ED ${OpenCV_LIBS} EDLib)
 
 add_executable(video_test video_test.cpp)
 target_link_libraries(video_test ${OpenCV_LIBS} EDLib)
+
+add_executable(dev-test1 dev-test1.cpp)
+target_link_libraries(dev-test1 ${OpenCV_LIBS} EDLib)
