@@ -34,6 +34,7 @@ test_script:
   - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe
   - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -pf
   - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -uc
+  - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -uc -lc=100000 -pf
 
 artifacts:
   - path: .\build\CIRCLES_AND_ELLIPSES_RESULT_IMAGE.jpg
