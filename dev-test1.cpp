@@ -13,6 +13,7 @@ int main( int argc, char** argv )
         "{lc    |9999 | loop count}"
         "{pf    |false| indicates if params.PFmode will be true or false}"
         "{uc    |false| indicates if color image will be used}"
+        "{s     |false| indicates if the image will be shown}"
     };
 
     CommandLineParser parser( argc, argv, keys );
@@ -20,6 +21,7 @@ int main( int argc, char** argv )
     int loop_count = parser.get< int >( "lc" );
     bool PFmode = parser.get< bool >( "pf" );
     bool use_color = parser.get< bool >( "uc" );
+    bool show = parser.get< bool >("s");
 
     cv::Ptr<cv::ximgproc::EdgeDrawing> ed = cv::ximgproc::createEdgeDrawing();
     ed->params.PFmode = PFmode;
@@ -75,22 +77,25 @@ int main( int argc, char** argv )
 
         if (ellipses.size()<1)
             cout << j << "    " << center << "  " << cvRound(radius) << endl;
-        for (const auto& ellipse : ellipses)
-        {
-            cv::Point icenter((int)ellipse[0], (int)ellipse[1]);
-            center = icenter;
-            cv::Size axes((int)ellipse[2] + (int)ellipse[3], (int)ellipse[2] + (int)ellipse[4]);
-            double angle(ellipse[5]);
-            cv::Scalar color = (ellipse[2] == 0) ? cv::Scalar(0, 255, 0) : cv::Scalar(0, 0, 255);
-            cv::ellipse(img, center, axes, angle, 0, 360, color, 2, cv::LINE_AA);
-        }
-        /*
-        imshow( "Rectangle, triangle & circle", img );
 
-        char key = (char)waitKey(1);
-        if( key == 27 || key == 'q' || key == 'Q' ) // 'ESC'
-            break;
-        */
+        if (show)
+        {
+            for (const auto& ellipse : ellipses)
+            {
+                cv::Point icenter((int)ellipse[0], (int)ellipse[1]);
+                center = icenter;
+                cv::Size axes((int)ellipse[2] + (int)ellipse[3], (int)ellipse[2] + (int)ellipse[4]);
+                double angle(ellipse[5]);
+                cv::Scalar color = (ellipse[2] == 0) ? cv::Scalar(127, 255, 0) : cv::Scalar(127, 0, 255);
+                cv::ellipse(img, center, axes, angle, 0, 360, color, 2, cv::LINE_AA);
+            }
+
+            imshow("Circle", img);
+
+            char key = (char)waitKey(1);
+            if (key == 27 || key == 'q' || key == 'Q') // 'ESC'
+                break;
+        }
     }
 
     tm.stop();
