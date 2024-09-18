@@ -5,7 +5,6 @@ platform:
   - x64
 
 install:
-  - cmd: echo "compile OpenCV"
   - cmd: git clone --depth=1 --branch=4.x https://github.com/opencv/opencv.git
   - cmd: git clone --depth=1 --branch=edcolor https://github.com/sturkmen72/opencv_contrib.git
   - cmd: md build-opencv
