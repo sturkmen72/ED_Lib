@@ -25,7 +25,7 @@ int main( int argc, char** argv )
 
     cv::Ptr<cv::ximgproc::EdgeDrawing> ed = cv::ximgproc::createEdgeDrawing();
     ed->params.PFmode = PFmode;
-    Mat img(500, 500, use_color ? CV_8UC3 : CV_8UC1, Scalar::all(0));
+    Mat img(300, 300, use_color ? CV_8UC3 : CV_8UC1, Scalar::all(0));
     RNG& rng = theRNG();
     TickMeter tm;
     tm.start();
