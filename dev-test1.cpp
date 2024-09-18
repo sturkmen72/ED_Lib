@@ -10,6 +10,8 @@ int main( int argc, char** argv )
 {
     const char* keys =
     {
+        "{w     |512  | width}"
+        "{h     |512  | height}"
         "{lc    |9999 | loop count}"
         "{pf    |false| indicates if params.PFmode will be true or false}"
         "{uc    |false| indicates if color image will be used}"
@@ -18,6 +20,8 @@ int main( int argc, char** argv )
 
     CommandLineParser parser( argc, argv, keys );
 
+    int w = parser.get< int >( "w" );
+    int h = parser.get< int >( "h" );
     int loop_count = parser.get< int >( "lc" );
     bool PFmode = parser.get< bool >( "pf" );
     bool use_color = parser.get< bool >( "uc" );
@@ -25,7 +29,7 @@ int main( int argc, char** argv )
 
     cv::Ptr<cv::ximgproc::EdgeDrawing> ed = cv::ximgproc::createEdgeDrawing();
     ed->params.PFmode = PFmode;
-    Mat img(300, 300, use_color ? CV_8UC3 : CV_8UC1, Scalar::all(0));
+    Mat img(h, w, use_color ? CV_8UC3 : CV_8UC1, Scalar::all(0));
     RNG& rng = theRNG();
     TickMeter tm;
     tm.start();
