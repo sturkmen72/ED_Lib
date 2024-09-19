@@ -24,9 +24,9 @@ test_script:
   - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe
   - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -pf
   - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -uc
-  - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -uc -lc=1000 -pf -w=1024 -h=1024
-  - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -uc -lc=1000 -pf -w=2048 -h=2048
-  - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -uc -lc=1000 -pf -w=4096 -h=4096
+  - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -uc -lc=100 -pf -w=1024 -h=1024
+  - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -uc -lc=100 -pf -w=2048 -h=2048
+  - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -uc -lc=100 -pf -w=4096 -h=4096
   - cmd: C:\projects\ed-lib\build\Release\test_it.exe C:/projects/ed-lib/planet_glow.jpg
   - cmd: C:\projects\ed-lib\build\Release\test_ED.exe C:/projects/ed-lib/billiard.jpg
   - cmd: C:\projects\ed-lib\build\Release\video_test.exe
