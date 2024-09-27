@@ -17,7 +17,7 @@ build_script:
   - cmd: md build
   - cmd: cd build
   - cmd: cmake .. -G "Visual Studio 16 2019"
-  - cmd: cmake --build . --config Release
+  - cmd: cmake --build .
 
 test_script:
   - cmd: set PATH=C:\projects\ed-lib\build-opencv\bin\Release
