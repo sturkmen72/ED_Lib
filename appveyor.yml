@@ -21,7 +21,7 @@ build_script:
 
 test_script:
   - cmd: set PATH=C:\projects\ed-lib\build-opencv\bin\Release
-  - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -lc=300
+  - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -lc=22300
   - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -lc=300 -pf
   - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -lc=300 -uc
   - cmd: C:\projects\ed-lib\build\Release\dev-test1.exe -lc=100 -w=1024 -h=1024
